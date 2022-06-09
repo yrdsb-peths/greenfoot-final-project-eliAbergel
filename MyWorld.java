@@ -25,6 +25,7 @@ public class MyWorld extends World
     public void spawnCar()
     {
         CpuCar3 redCar = new CpuCar3();
+
         int x = Greenfoot.getRandomNumber(500);
         int y = 0;
         addObject(redCar,x,y);
