@@ -12,18 +12,21 @@ public class CpuCar3 extends Actor
      * Act - do whatever the CpuCar3 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int speed = 10;
+    int speed = 5;
+
     public void act()
     {
-        int x = getX();
-        int y = getY() + speed + 10;
+        int x = getX() + -speed + -5;
+        int y = getY();
         setLocation(x,y);
         
-        MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
+        world1 world = (world1) getWorld();
+        if(getX() <= 0)
         {
-            setLocation(Greenfoot.getRandomNumber(500),1);
-            speed = Greenfoot.getRandomNumber(20);
+            setLocation(800,Greenfoot.getRandomNumber(200)+300);
+            speed = Greenfoot.getRandomNumber(5);
+            world.addScore();
+            UserCar.addTurboScore();
         }
     }
 }
