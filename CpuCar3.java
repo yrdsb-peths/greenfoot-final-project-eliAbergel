@@ -13,7 +13,7 @@ public class CpuCar3 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 5;
-
+    public static boolean crash = false;
     public void act()
     {
         int x = getX() + -speed + -5;
@@ -21,6 +21,10 @@ public class CpuCar3 extends Actor
         setLocation(x,y);
         
         world1 world = (world1) getWorld();
+        if (crash == true)
+        {
+            world.removeObject(this);    
+        }
         if(getX() <= 0)
         {
             setLocation(800,Greenfoot.getRandomNumber(200)+300);
@@ -29,4 +33,13 @@ public class CpuCar3 extends Actor
             UserCar.addTurboScore();
         }
     }
+    public static void crashHappened()
+    {
+        crash = true;
+    }
+    public static void crashDidNotHappen()
+    {
+        crash = false;
+    }
+
 }

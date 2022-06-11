@@ -14,7 +14,6 @@ public class UserCar extends Actor
      */
     int x = 0;
     public static int turboScore = 0;
-    int health = 1;
     int blocker = 50;
     public void act()
     {
@@ -35,16 +34,18 @@ public class UserCar extends Actor
             x = getX();
             blocker = blocker - 3;
         }
-        if (health == 0)
+        if(getX() == 0)
         {
-            
+            setLocation(1000, 1000);
+            CpuCar3.crashHappened();
+            world1.crashLabel();
         }
-        if(getX() <= 0)
+        else
         {
-            
+            CpuCar3.crashDidNotHappen();
         }
         turbo();
-        crash();
+        hit();
     }
     public void turbo()
     {
@@ -56,12 +57,11 @@ public class UserCar extends Actor
             world1.minusTurbo();
         }
     }
-    public void crash()
+    public void hit()
     {
         if(isTouching(CpuCar3.class))
         {
-            move(-20);
-            health--;
+            move(-10);
         }
     }
     public static void addTurboScore()

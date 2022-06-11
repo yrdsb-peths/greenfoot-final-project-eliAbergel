@@ -12,8 +12,8 @@ public class world1 extends World
     public static int turboScore1 = 0;
     public String ready = "Ready!";
     public String notReady = "Not Ready";
-    Label scoreLabel;
-    Label turboLabel;
+    static Label scoreLabel;
+    static Label turboLabel;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -30,7 +30,13 @@ public class world1 extends World
         addObject(scoreLabel,50,50);
         turboLabel = new Label(0,50);
         addObject(turboLabel,200,50);
-        turboLabel.setValue("GO!!!");      
+        turboLabel.setValue("GO!!!");   
+        
+    }
+    public static void crashLabel()
+    {
+        turboLabel.setValue(""); 
+        scoreLabel.setValue(""); 
     }
     public static void minusTurbo()
     {
