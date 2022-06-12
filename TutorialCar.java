@@ -21,13 +21,7 @@ public class TutorialCar extends Actor
         {
             world.removeObject(this);    
         }
-        if(getX() <= 0)
-        {
-            setLocation(800,Greenfoot.getRandomNumber(200)+300);
-            speed = Greenfoot.getRandomNumber(5);
-            world.addScore();
-            UserCar.addTurboScore();
-        }
+
     }
     public static void crashHappened()
     {

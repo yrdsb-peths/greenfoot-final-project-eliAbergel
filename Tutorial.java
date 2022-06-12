@@ -9,13 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Tutorial extends World
 {
     public int score = 0;
-    public static int turboScore1 = 0;
+    public static int turboScore1 = 1;
+    public int tutCounter = 1;
     public String ready = "Ready!";
     public String notReady = "Not Ready";
     static Label scoreLabel;
     static Label turboLabel;
     Label tutorialLabel;
     Label tutorial2Label;
+    Label tutorial3Label;
     /**
      * Constructor for objects of class Controls.
      * 
@@ -30,26 +32,42 @@ public class Tutorial extends World
         addObject(tutorialLabel,300,100); 
         tutorial2Label = new Label("",40);
         addObject(tutorial2Label,300,150);    
+        tutorial3Label = new Label("",40);
+        addObject(tutorial3Label,300,200);  
         
         scoreLabel = new Label(0,80);
         addObject(scoreLabel,50,50);
         turboLabel = new Label(0,50);
         addObject(turboLabel,200,50);
         turboLabel.setValue("GO!!!"); 
-        spawnCar();
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space") && tutCounter == 1)
         {
             tutorialLabel.setValue("Press up and down to move");
             tutorial2Label.setValue("car(press space)");
-            if(Greenfoot.isKeyDown("space"))
-            {
-                tutorialLabel.setValue("Now dodge a car");
-                tutorial2Label.setValue("");
-                
-            }
+            tutCounter++;
+        }
+        if(Greenfoot.isKeyDown("space") && tutCounter == 2)
+        {
+            tutorialLabel.setValue("Now try to dodge a car(press space)");
+            tutorial2Label.setValue("");
+            spawnCar();
+            tutCounter++; 
+        }
+        if(Greenfoot.isKeyDown("space") && tutCounter == 3)
+        {
+            tutorialLabel.setValue("Great! Cars passing you give you");
+            tutorial2Label.setValue("points,which can be used turbo(press space)");
+            tutCounter++;
+            
+        }
+        if(Greenfoot.isKeyDown("space") && tutCounter == 4)
+        {
+            tutorialLabel.setValue("Every 10 points turbo can be used, it");
+            tutorial2Label.setValue("gives it gives you more space intill");
+            tutorial3Label.setValue("you crash(press space)");
         }
     }
     

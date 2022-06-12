@@ -19,7 +19,7 @@ public class GameOver extends World
     {   
         super(800, 500, 1); 
         gameOver1Label = new Label("Game Over!",100);
-        addObject(gameOver1Label,400,200);
+        addObject(gameOver1Label,400,250);
         gameOver2Label = new Label("Press space to play again",50);
         addObject(gameOver2Label,400,300);
         gameOver3Label = new Label("or press enter to go to the title screen",50);
