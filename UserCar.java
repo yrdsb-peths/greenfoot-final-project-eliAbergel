@@ -17,6 +17,7 @@ public class UserCar extends Actor
     int blocker = 50;
     public void act()
     {
+
         if (blocker >= 200)
         {
             setLocation(getX(), getY()+3);
@@ -38,28 +39,44 @@ public class UserCar extends Actor
         {
             setLocation(1000, 1000);
             CpuCar3.crashHappened();
-            world1.crashLabel();
+            CpuCar2.crashHappened();
+            CpuCar.crashHappened();
+            World1.crashLabel();
+            GameOver gameOver = new GameOver();
+            Greenfoot.setWorld(gameOver);
+            turboScore = 0;
+            World1.turboScore1 = 0;
         }
         else
         {
             CpuCar3.crashDidNotHappen();
+            CpuCar2.crashDidNotHappen();
+            CpuCar.crashDidNotHappen();
         }
         turbo();
         hit();
     }
     public void turbo()
     {
-        if ((turboScore - 10) > 0 && Greenfoot.isKeyDown("right"))
+        if ((turboScore - 9) > 0 && Greenfoot.isKeyDown("right"))
         {
             move(50);
             turboScore = turboScore - 10;
             
-            world1.minusTurbo();
+            World1.minusTurbo();
         }
     }
     public void hit()
     {
         if(isTouching(CpuCar3.class))
+        {
+            move(-10);
+        }
+        if(isTouching(CpuCar2.class))
+        {
+            move(-10);
+        }
+        if(isTouching(CpuCar.class))
         {
             move(-10);
         }

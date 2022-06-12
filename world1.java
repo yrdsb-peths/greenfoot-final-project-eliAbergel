@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class world1 extends World
+public class World1 extends World
 {
     public int score = 0;
     public static int turboScore1 = 0;
@@ -14,24 +14,40 @@ public class world1 extends World
     public String notReady = "Not Ready";
     static Label scoreLabel;
     static Label turboLabel;
-
+    public int checkCar2 = 0;
+    public int checkCar3 = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public world1()
+    public World1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1, false);
         UserCar userCar = new UserCar();
         addObject(userCar, 100, 450);
         spawnCar();
+        
         scoreLabel = new Label(0,80);
         addObject(scoreLabel,50,50);
         turboLabel = new Label(0,50);
         addObject(turboLabel,200,50);
         turboLabel.setValue("GO!!!");   
         
+    }
+    public void act()
+    {
+
+        if(score == 15 && checkCar2 == 0)
+        {
+            spawnCar2();
+            checkCar2++;
+        }
+        if(score == 30 && checkCar3 == 0)
+        {
+            spawnCar3();
+            checkCar3++;
+        }
     }
     public static void crashLabel()
     {
@@ -48,6 +64,21 @@ public class world1 extends World
         int x = 800;
         int y = Greenfoot.getRandomNumber(200) + 300;
         addObject(redCar,x,y);
+        
+    }
+    public void spawnCar2()
+    {
+        CpuCar2 blackCar = new CpuCar2();
+        int x = 800;
+        int y = Greenfoot.getRandomNumber(200) + 300;
+        addObject(blackCar,x,y);
+    }
+    public void spawnCar3()
+    {
+        CpuCar blueCar = new CpuCar();
+        int x = 800;
+        int y = Greenfoot.getRandomNumber(200) + 300;
+        addObject(blueCar,x,y);
     }
     public void addScore()
     {

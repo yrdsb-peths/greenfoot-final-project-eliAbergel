@@ -1,17 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CpuCar3 here.
+ * Write a description of class TutorialCar here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CpuCar3 extends Actor
+public class TutorialCar extends Actor
 {
-    /**
-     * Act - do whatever the CpuCar3 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     int speed = 5;
     public static boolean crash = false;
     public void act()
@@ -20,7 +16,7 @@ public class CpuCar3 extends Actor
         int y = getY();
         setLocation(x,y);
         
-        World1 world = (World1) getWorld();
+        Tutorial world = (Tutorial) getWorld();
         if (crash == true)
         {
             world.removeObject(this);    
@@ -41,5 +37,4 @@ public class CpuCar3 extends Actor
     {
         crash = false;
     }
-
 }
