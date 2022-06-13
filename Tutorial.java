@@ -11,13 +11,14 @@ public class Tutorial extends World
     public int score = 0;
     public static int turboScore1 = 1;
     public int tutCounter = 1;
-    public String ready = "Ready!";
-    public String notReady = "Not Ready";
     static Label scoreLabel;
     static Label turboLabel;
+    public String ready = "Ready!";
+    public String notReady = "Not Ready";
     Label tutorialLabel;
     Label tutorial2Label;
     Label tutorial3Label;
+    public static int carDone = 0;
     /**
      * Constructor for objects of class Controls.
      * 
@@ -29,11 +30,11 @@ public class Tutorial extends World
         UserCar userCar = new UserCar();
         addObject(userCar, 100, 450);
         tutorialLabel = new Label("Welcome to Sunset Turbo(press space)",40);
-        addObject(tutorialLabel,300,100); 
+        addObject(tutorialLabel,320,100); 
         tutorial2Label = new Label("",40);
-        addObject(tutorial2Label,300,150);    
+        addObject(tutorial2Label,320,150);    
         tutorial3Label = new Label("",40);
-        addObject(tutorial3Label,300,200);  
+        addObject(tutorial3Label,320,200);  
         
         scoreLabel = new Label(0,80);
         addObject(scoreLabel,50,50);
@@ -46,28 +47,49 @@ public class Tutorial extends World
         if(Greenfoot.isKeyDown("space") && tutCounter == 1)
         {
             tutorialLabel.setValue("Press up and down to move");
-            tutorial2Label.setValue("car(press space)");
+            tutorial2Label.setValue("the car");
             tutCounter++;
         }
-        if(Greenfoot.isKeyDown("space") && tutCounter == 2)
+        if(Greenfoot.isKeyDown("up") && tutCounter == 2)
         {
-            tutorialLabel.setValue("Now try to dodge a car(press space)");
-            tutorial2Label.setValue("");
+            tutorialLabel.setValue("Now try to dodge a car. Hitting cars pushs");
+            tutorial2Label.setValue("you back, when you get to the edge");
+            tutorial3Label.setValue("of the screen your game will be over");
             spawnCar();
             tutCounter++; 
         }
-        if(Greenfoot.isKeyDown("space") && tutCounter == 3)
+        if(carDone == 1 && tutCounter == 3)
         {
-            tutorialLabel.setValue("Great! Cars passing you give you");
-            tutorial2Label.setValue("points,which can be used turbo(press space)");
+            tutorialLabel.setValue("Nice! Cars passing give you points, which");
+            tutorial2Label.setValue("can be used with turbo. turbo gives you");
+            tutorial3Label.setValue("more space before crashing(press space)");
             tutCounter++;
             
         }
         if(Greenfoot.isKeyDown("space") && tutCounter == 4)
         {
-            tutorialLabel.setValue("Every 10 points turbo can be used, it");
-            tutorial2Label.setValue("gives it gives you more space intill");
-            tutorial3Label.setValue("you crash(press space)");
+            tutorialLabel.setValue("Turbo costs 10 points");
+            turboLabel.setValue("Ready!");
+            scoreLabel.setValue("10");
+            UserCar.turboScore = 10;
+            tutorial2Label.setValue("Here's the 10 points needed to use turbo");
+            tutorial3Label.setValue("Press right to use turbo");
+            tutCounter++;
+        }
+        if(Greenfoot.isKeyDown("right") && tutCounter == 5)
+        {
+            tutorialLabel.setValue("Good job, now try the full game");
+            tutorial2Label.setValue("To go back to the title");
+            tutorial3Label.setValue("screen press ENTER");
+            turboLabel.setValue("Not Ready");
+            tutCounter++;
+        }
+        if(Greenfoot.isKeyDown("enter") && tutCounter == 6)
+        {
+            tutCounter = 0;
+            carDone--;
+            TitleScreen title = new TitleScreen();
+            Greenfoot.setWorld(title);
         }
     }
     
@@ -77,21 +99,6 @@ public class Tutorial extends World
         int x = 800;
         int y = Greenfoot.getRandomNumber(200) + 300;
         addObject(tutCar,x,y);
-    }
-    public void addScore()
-    {
-        score++;
-        turboScore1++;
-        scoreLabel.setValue(score);
-        if (turboScore1 >= 10)
-        {
-            turboLabel.setValue(ready);
-        }
-        else
-        {
-            turboLabel.setValue(notReady);
-        }
- 
     }
     public static void crashLabel()
     {

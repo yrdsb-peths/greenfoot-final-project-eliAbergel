@@ -29,7 +29,7 @@ public class CpuCar3 extends Actor
         {
             setLocation(800,Greenfoot.getRandomNumber(200)+300);
             speed = Greenfoot.getRandomNumber(5);
-            world.addScore();
+            World1.addScore();
             UserCar.addTurboScore();
         }
     }

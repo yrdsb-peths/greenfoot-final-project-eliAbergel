@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class World1 extends World
 {
-    public int score = 0;
+    public static int score = 0;
     public static int turboScore1 = 0;
     public String ready = "Ready!";
     public String notReady = "Not Ready";
@@ -37,7 +37,6 @@ public class World1 extends World
     }
     public void act()
     {
-
         if(score == 15 && checkCar2 == 0)
         {
             spawnCar2();
@@ -80,18 +79,18 @@ public class World1 extends World
         int y = Greenfoot.getRandomNumber(200) + 300;
         addObject(blueCar,x,y);
     }
-    public void addScore()
+    public static void addScore()
     {
         score++;
         turboScore1++;
         scoreLabel.setValue(score);
         if (turboScore1 >= 10)
         {
-            turboLabel.setValue(ready);
+            turboLabel.setValue("Ready!");
         }
         else
         {
-            turboLabel.setValue(notReady);
+            turboLabel.setValue("Not Ready");
         }
  
     }

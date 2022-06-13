@@ -8,11 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TutorialCar extends Actor
 {
-    int speed = 5;
     public static boolean crash = false;
     public void act()
     {
-        int x = getX() + -speed + -5;
+        int x = getX() + -3;
         int y = getY();
         setLocation(x,y);
         
@@ -21,7 +20,10 @@ public class TutorialCar extends Actor
         {
             world.removeObject(this);    
         }
-
+        if(getX() <= 0)
+        {
+            Tutorial.carDone = 1;
+        }
     }
     public static void crashHappened()
     {

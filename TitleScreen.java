@@ -20,9 +20,9 @@ public class TitleScreen extends World
         super(800, 500, 1); 
         titleLabel = new Label("Sunset Turbo",100);
         addObject(titleLabel,400,250);
-        instruction1Label = new Label("Press t for tutorial",30);
+        instruction1Label = new Label("Press T for tutorial",30);
         addObject(instruction1Label,550,400);
-        instruction2Label = new Label("Press space to start game",30);
+        instruction2Label = new Label("Press SPACE   to start game",30);
         addObject(instruction2Label,600,450);
     }
     public void act()

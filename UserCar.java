@@ -17,7 +17,6 @@ public class UserCar extends Actor
     int blocker = 50;
     public void act()
     {
-
         if (blocker >= 200)
         {
             setLocation(getX(), getY()+3);
@@ -46,6 +45,7 @@ public class UserCar extends Actor
             Greenfoot.setWorld(gameOver);
             turboScore = 0;
             World1.turboScore1 = 0;
+            World1.score = 0;
         }
         else
         {
@@ -85,5 +85,4 @@ public class UserCar extends Actor
     {
         turboScore = turboScore + 1;
     }
-
 }
