@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Tutorial
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Controls\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ This\ is\ a\ tutorial\ world\ to\ help\ the\ player\ get\ understand\ the\ controls.\r\n\ and\ feel\ of\ the\ game.\r\n\ \r\n\ @author\ (Eli\ Abergel)\ \r\n\ @version\ (June\ 11\ 2022)\r\n
 comment1.params=
 comment1.target=Tutorial()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Controls.\r\n\ \r\n
@@ -8,6 +8,4 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawnCar()
-comment4.params=
-comment4.target=void\ crashLabel()
-numComments=5
+numComments=4

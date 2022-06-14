@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CpuCar
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ CpuCar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ this\ is\ the\ third\ car\ that\ is\ spawned\ at\ round\ 30.\r\n\ \r\n\ @author\ (Eli\ Abergel)\ \r\n\ @version\ (June\ 8\ 2022)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=

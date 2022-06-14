@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=UserCar
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ UserCar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ player's\ car.\r\n\ \r\n\ @author\ (Eli\ Abergel)\ \r\n\ @version\ (June\ 8\ 2022)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
